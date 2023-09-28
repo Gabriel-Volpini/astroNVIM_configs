@@ -17,6 +17,19 @@ return {
     --   function() require("astronvim.utils.buffer").nav(-(vim.v.count > 0 and vim.v.count or 1)) end,
     --   desc = "Previous buffer",
     -- },
+    L = {
+      function() require("astronvim.utils.buffer").nav(vim.v.count > 0 and vim.v.count or 1) end,
+      desc = "Next buffer",
+    },
+    H = {
+      function() require("astronvim.utils.buffer").nav(-(vim.v.count > 0 and vim.v.count or 1)) end,
+      desc = "Previous buffer",
+    },
+    ["<leader>x"]={
+    function() require("astronvim.utils.buffer").close() end,
+    desc = "Close buffer"
+    
+    },
 
     -- mappings seen under group name "Buffer"
     ["<leader>bD"] = {
