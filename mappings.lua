@@ -26,11 +26,14 @@ return {
       desc = "Previous buffer",
     },
     ["<leader>x"]={
-    function() require("astronvim.utils.buffer").close() end,
-    desc = "Close buffer"
-    
+      function() require("astronvim.utils.buffer").close() end,
+      desc = "Close buffer"
     },
 
+    ["<C-q>s"] = {
+      "<cmd>SessionManager! save_current_session<cr><cmd>qa!<cr>",
+      desc = "Save this session"
+    },
     -- mappings seen under group name "Buffer"
     ["<leader>bD"] = {
       function()
@@ -49,5 +52,8 @@ return {
   t = {
     -- setting a mapping to false will disable it
     -- ["<esc>"] = false,
+  },
+  i={
+     ["<C-s>"] = { "<esc>:w!<cr>", desc = "Save File" },  -- change description but the same command
   },
 }
